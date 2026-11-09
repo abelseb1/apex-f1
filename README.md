@@ -1,10 +1,10 @@
 # Apex F1
 
-[Source](https://github.com/abelseb1/apex-f1) | [Build checks](https://github.com/abelseb1/apex-f1/actions)
+[Live demo](https://apex-f1-puce.vercel.app) | [Source](https://github.com/abelseb1/apex-f1) | [Build checks](https://github.com/abelseb1/apex-f1/actions)
 
 A responsive Formula 1 race centre built with Next.js, React and TypeScript. Explore the calendar, championship standings, driver and constructor profiles, qualifying results, and session timing in one application.
 
-This standalone version runs on standard Node.js and is prepared for Vercel. It has no ChatGPT Sites account, deployment, or authentication dependency.
+This standalone version runs on standard Node.js and is hosted on Vercel. It has no ChatGPT Sites account, deployment, or authentication dependency.
 
 ## Features
 
@@ -45,7 +45,7 @@ GitHub Actions runs tests, type checking, and the production build on pushes and
 
 Follow [the GitHub and Vercel guide](docs/DEPLOYMENT.md). `vercel.json` selects Next.js, `npm ci`, and `npm run build`; `package.json` pins the Node.js major to 24. No Worker adapter or static export is needed.
 
-After deployment, add your real Vercel URL to the repository's About section and pin the repository on your GitHub profile. No placeholder live-demo link is included here.
+The live demo is deployed from this repository's `main` branch. Updates pushed to `main` trigger a new Vercel production build; pull requests can receive preview deployments. See [verification notes](docs/VERIFICATION.md) for the checks performed.
 
 ## Architecture
 
