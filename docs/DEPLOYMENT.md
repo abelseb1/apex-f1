@@ -1,27 +1,23 @@
 # GitHub And Vercel Deployment
 
-This folder is an independent copy. Publishing it does not modify or disconnect the existing ChatGPT Sites deployment. No Git remote, Vercel project, or production domain has been configured for this copy.
+This project is independent of the original ChatGPT Sites deployment. Publishing or updating it does not modify or disconnect that original site.
 
-## 1. Publish The Source
+## 1. Work With The Repository
 
-The prepared folder has a freshly initialized local Git repository on `codex/vercel-ready`. It does not include the old repository's commits, deployment archives, runtime caches, or credentials. The first commit is left to you because no Git author identity was configured; your portfolio commit should use your own identity.
+The public source is [abelseb1/apex-f1](https://github.com/abelseb1/apex-f1), with `main` as the production branch. It excludes the original hosting history, deployment archives, runtime caches, and credentials.
 
-1. Create an empty repository named `apex-f1` at https://github.com/new. Public visibility makes it visible in your portfolio. Do not initialize the remote with a README, license, or gitignore.
-2. Open a terminal in this project folder and authenticate with your own GitHub account. Never paste a personal access token into the remote URL.
-3. Set your commit name and GitHub-associated email (or your GitHub-provided private noreply email). These settings apply only to this repository. Replace the placeholders below, then run:
+For a fresh local checkout:
 
 ```bash
-git config user.name "YOUR_NAME"
-git config user.email "YOUR_GITHUB_EMAIL"
-git add .
-git commit -m "Initial standalone Apex F1 app"
-git remote add origin https://github.com/YOUR_USERNAME/apex-f1.git
-git push -u origin HEAD:main
+git clone https://github.com/abelseb1/apex-f1.git
+cd apex-f1
+npm ci
+npm run dev
 ```
 
-For later updates from the prepared local branch, commit your changes and use `git push origin HEAD:main`. A normal fresh clone from GitHub will use `main`.
+The original prepared standalone checkout uses the local branch `codex/vercel-ready`, tracking `origin/main`. From that checkout, commit changes and use `git push origin HEAD:main`. Fresh clones use `main` and can use `git push`. Authenticate through Git Credential Manager or GitHub Desktop; never put a token in the remote URL. Use your own Git author identity and a GitHub no-reply email when keeping your personal email private.
 
-Alternatively, GitHub Desktop can add this existing local repository, create the first commit using your configured account identity, and publish it. Rename the local branch to `main` before publishing, or select the actual published branch as Vercel's production branch. Check the selected folder carefully: use `apex-f1-vercel`, not the original hosted checkout. Review the files before making the repository public. If starting from the ZIP instead of the prepared folder, run `git init -b codex/vercel-ready` first; ZIP exports do not include `.git`.
+GitHub Desktop can also clone this repository or add the prepared `apex-f1-vercel` folder. Do not select the original hosted checkout. A ZIP export contains source files, not Git history; cloning is the preferred way to make future updates. For your own independent deployment, fork this repository first and review the third-party asset notes before redistribution.
 
 ## 2. Import Into Vercel
 

@@ -1,5 +1,7 @@
 # Apex F1
 
+[Source](https://github.com/abelseb1/apex-f1) | [Build checks](https://github.com/abelseb1/apex-f1/actions)
+
 A responsive Formula 1 race centre built with Next.js, React and TypeScript. Explore the calendar, championship standings, driver and constructor profiles, qualifying results, and session timing in one application.
 
 This standalone version runs on standard Node.js and is prepared for Vercel. It has no ChatGPT Sites account, deployment, or authentication dependency.
