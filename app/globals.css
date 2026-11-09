@@ -1,0 +1,359 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #090a0e;
+}
+
+* {
+  box-sizing: border-box;
+  letter-spacing: 0 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #090a0e;
+  color: #f7f7f8;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-feature-settings: "tnum";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
+  opacity: 0.55;
+}
+
+::selection {
+  color: white;
+  background: rgba(255, 39, 70, 0.72);
+}
+
+.driver-photo {
+  position: absolute;
+  inset: 0;
+  container-type: inline-size;
+  overflow: hidden;
+  color: white;
+  background: var(--portrait-base);
+}
+
+.driver-photo-texture {
+  position: absolute;
+  inset: 0;
+  background: var(--portrait-accent);
+  mask-image: url("/f1-assets/drivers/card-texture.webp");
+  mask-size: auto 150%;
+  mask-position: 30% center;
+}
+
+.driver-photo::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, var(--portrait-base) 24%, transparent 92%);
+  pointer-events: none;
+}
+
+/* Full-length and torso originals need different framing to match the waist-up cards. */
+.driver-photo-figure {
+  position: absolute;
+  z-index: 1;
+  top: 5%;
+  right: 3%;
+  width: 63%;
+  height: 275%;
+}
+
+.driver-photo-figure-torso {
+  top: 2%;
+  right: 8%;
+  width: 46%;
+  height: 145%;
+}
+
+.driver-photo-identity {
+  position: absolute;
+  z-index: 2;
+  top: 6%;
+  left: 4.3%;
+  width: 49%;
+  font-size: 6.1cqw;
+  line-height: 1.04;
+  overflow-wrap: anywhere;
+}
+
+.driver-photo-team {
+  margin-top: 2cqw;
+  font-size: 3.5cqw;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.driver-photo-number {
+  margin-top: 3.5cqw;
+  font-size: 8.4cqw;
+  font-weight: 900;
+}
+
+.driver-photo-flag {
+  position: absolute;
+  z-index: 2;
+  left: 4.3%;
+  bottom: 6.5%;
+  width: 6.3%;
+  height: auto;
+  aspect-ratio: 1;
+  border: 2px solid white;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #5ff2ba;
+  outline-offset: 3px;
+}
+
+.glass {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #111218;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.28);
+}
+
+.glass::after {
+  display: none;
+}
+
+.glass > * {
+  position: relative;
+  z-index: 1;
+}
+
+.table-scroll {
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 6px;
+  overflow-x: auto;
+  background: #0b0c11;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+  min-width: 840px;
+}
+
+.table-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #e10600;
+}
+
+.premium-panel {
+  position: relative;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #111218;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
+}
+
+.premium-panel::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, rgba(225, 6, 0, 0.82), rgba(255, 255, 255, 0.2) 22%, transparent 62%);
+  pointer-events: none;
+}
+
+.data-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 0.35rem 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 24px;
+  height: 5px;
+  content: "";
+  background: #e10600;
+}
+
+.mobile-nav-scroll {
+  scrollbar-width: none;
+}
+
+.mobile-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.timing-table {
+  min-width: 1120px;
+}
+
+.timing-table th,
+.timing-table td {
+  white-space: nowrap;
+}
+
+.timing-table th {
+  background: #15161d;
+}
+
+.timing-table th:nth-child(1),
+.timing-table td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  width: 64px;
+  min-width: 64px;
+}
+
+.timing-table th:nth-child(2),
+.timing-table td:nth-child(2) {
+  position: sticky;
+  left: 64px;
+  z-index: 3;
+  width: 228px;
+  min-width: 228px;
+  box-shadow: 14px 0 22px rgba(0, 0, 0, 0.2);
+}
+
+.timing-table tbody td:nth-child(1),
+.timing-table tbody td:nth-child(2) {
+  background: inherit;
+}
+
+.timing-table thead th:nth-child(1),
+.timing-table thead th:nth-child(2) {
+  background: #15161d;
+  z-index: 4;
+}
+
+.speed-lines {
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  background-size: 9px 100%, 120% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.driver-card-art {
+  position: absolute;
+  right: 8%;
+  bottom: 0;
+  width: 30%;
+  min-width: 86px;
+  aspect-ratio: 0.56;
+  border-radius: 999px 999px 8px 8px;
+  background:
+    radial-gradient(circle at 50% 15%, #d6a98d 0 11%, transparent 11.5%),
+    linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.1)),
+    #14151b;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.driver-card-art::after {
+  position: absolute;
+  inset: 26% 12% 0;
+  content: "";
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(145deg, rgba(255,255,255,0.28), transparent), currentColor;
+}
+
+.team-car-art {
+  position: absolute;
+  left: 10%;
+  right: 12%;
+  bottom: 18%;
+  height: 28px;
+  color: inherit;
+  background: currentColor;
+  border-radius: 999px 32px 16px 12px;
+  filter: drop-shadow(0 12px 18px rgba(0,0,0,0.45));
+}
+
+.team-car-art::before,
+.team-car-art::after {
+  position: absolute;
+  bottom: -10px;
+  width: 28px;
+  height: 28px;
+  content: "";
+  border: 4px solid #0b0b0f;
+  border-radius: 50%;
+  background: #d9d9df;
+}
+
+.team-car-art::before {
+  left: 14%;
+}
+
+.team-car-art::after {
+  right: 10%;
+}

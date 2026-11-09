@@ -1,0 +1,17 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#FFFFFF" stroke-opacity="0.035"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="600" fill="#0B0C11"/>
+  <rect width="1200" height="600" fill="url(#grid)"/>
+  <path d="M153 383C221 482 385 492 455 390C522 292 438 226 530 158C636 80 806 109 884 204C966 304 835 381 913 446C982 503 1067 446 1091 370" stroke="#E10600" stroke-width="62" stroke-linecap="round" opacity="0.2" filter="url(#shadow)"/>
+  <path d="M153 383C221 482 385 492 455 390C522 292 438 226 530 158C636 80 806 109 884 204C966 304 835 381 913 446C982 503 1067 446 1091 370" stroke="#E10600" stroke-width="34" stroke-linecap="round"/>
+  <path d="M153 383C221 482 385 492 455 390C522 292 438 226 530 158C636 80 806 109 884 204C966 304 835 381 913 446C982 503 1067 446 1091 370" stroke="#F7F7F8" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="153" cy="383" r="16" fill="#00D2BE" stroke="#0B0C11" stroke-width="6"/>
+  <path d="M110 352V414M124 352V414" stroke="#F7F7F8" stroke-width="8"/>
+</svg>
